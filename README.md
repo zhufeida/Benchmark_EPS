@@ -4,9 +4,9 @@
 
 This benchmark includes an image dataset with groundtruth image smoothing results as well as baseline algorithms that can generate competitive edge-preserving smoothing results for a wide range of image contents. The established dataset contains 500 training and testing images with a number of representative visual object categories, while the baseline methods in our benchmark are built upon representative deep convolutional network architectures, on top of which we design novel loss functions well suited for edge-preserving image smoothing. The trained deep networks run faster than most state-of-the-art smoothing algorithms with leading smoothing results both qualitatively and quantitatively.
 
-Dataset can be downloaded at [Google Drive](https://drive.google.com/file/d/1xK6p4qtbu8Hdd-Bxu6jwp6BLYFRa-Lsj/view?usp=sharing)
+Dataset can be downloaded at here in [[Google Drive](https://drive.google.com/file/d/1xK6p4qtbu8Hdd-Bxu6jwp6BLYFRa-Lsj/view?usp=sharing)]
 
-Previous state-of-the-art methods code and sample smoothing results can be downloaded at [Google Drive](https://drive.google.com/file/d/1j2IP3Q3CUel21H_JaO9SCfppHyJ4Nmet/view?usp=sharing)
+Previous state-of-the-art methods code and sample smoothing results can be downloaded at here in [[Google Drive](https://drive.google.com/file/d/1j2IP3Q3CUel21H_JaO9SCfppHyJ4Nmet/view?usp=sharing)]
 
 Please download these two zip files and unzip them to the work directory. The complete file structure should be like this.
 ```bash
@@ -32,15 +32,22 @@ Please download these two zip files and unzip them to the work directory. The co
 
 ## 2 Dataset Usage
 
-
+original image sample:
 <p align='center'>
-  <img src="readme/0001_1.png" width="100" />
-  <img src="readme/0001_1.png" width="100" /> 
-  <img src="readme/0001_1.png" width="100" />
+<img src="README/0030.png" width="150"/> 
+</p>
+
+groundtruth image sample:
+<p align='center'>
+  <img src="README/0030_1.png" width="150" />
+  <img src="README/0030_2.png" width="150" /> 
+  <img src="README/0030_3.png" width="150" />
+  <img src="README/0030_4.png" width="150" />
+  <img src="README/0030_5.png" width="150" />
 </p>
 
 - **original images:** The constructed dataset for edge-preserving smoothing contains 500 natural images named by ```0001-0500.png``` (```0001-0400.png``` for training and ```0401-0500.png``` for testing). The original images are located at ```dataset/origin_images```. 
-- **ground truth images:** Each image is associated with 14 human-selected smoothing results. We only keep the five most chosen results. For example, the ground truth images of ```0001.png``` are named by ```0001_1.png--0001_5.png```. The "ground truth" images are located at ```dataset/gt_images``` and the weight for each gt image is save at ```dataset/weight_matrix.mat```. 
+- **ground truth images:** Each image is associated with 14 human-selected smoothing results. We only keep the five most chosen results. The "ground truth" images are located at ```dataset/gt_images``` and the weight for each gt image is save at ```dataset/weight_matrix.mat```. For example, the ground truth images of ```0001.png``` are named by ```0001_1.png--0001_5.png```.
 
 We proposed two quantitative measures: Weighted Mean Absolute Error (**WMAE**) and Weighted Root Mean Squared Error (**WRMSE**). Run ```dataset/compute_WAME_WRMSE.py``` to evaluate your own algorithm performance.
 
@@ -51,6 +58,14 @@ python compute_WMAE_WRMSE.py --result_path=path_to_your_result_folder
 
 
 ## 3 Baseline Methods: VDCNN and ResNet
+
+<p align='center'>
+<img src="README/VDCNN.jpg" > 
+</p>
+
+<p align='center'>
+<img src="README/ResNet.jpg" > 
+</p>
 
 ### Disclaimer:
 
@@ -123,6 +138,23 @@ python compute_WMAE_WRMSE.py --result_path=../Previous_Methods/method_1_sdf/para
 
 ## 5 Application
 
+Smoothing high-contrast details while preserving edges is a useful step in many applications. We briefly discuss two applications, including tone mapping and contrast enhancement, by applying the trained ResNet model as the edge-preserving smoothing filter. Please refer to paper for more details
+
+* **Tone Mapping**
+<p align='center'>
+<img src="README/tonemapping1.png" > 
+</p>
+<p align='center'>
+<img src="README/tonemapping2.png" > 
+</p>
+
+* **Contrast Enhancement**
+<p align='center'>
+<img src="README/contrast1.png" > 
+</p>
+<p align='center'>
+<img src="README/contrast2.png" > 
+</p>
 
 
 ## Acknowledgements
