@@ -4,9 +4,9 @@
 
 This benchmark includes an image dataset with groundtruth image smoothing results as well as baseline algorithms that can generate competitive edge-preserving smoothing results for a wide range of image contents. The established dataset contains 500 training and testing images with a number of representative visual object categories, while the baseline methods in our benchmark are built upon representative deep convolutional network architectures, on top of which we design novel loss functions well suited for edge-preserving image smoothing. The trained deep networks run faster than most state-of-the-art smoothing algorithms with leading smoothing results both qualitatively and quantitatively.
 
-Dataset can be downloaded at here in [[Google Drive](https://drive.google.com/file/d/1xK6p4qtbu8Hdd-Bxu6jwp6BLYFRa-Lsj/view?usp=sharing)]
+Dataset can be downloaded [here](https://drive.google.com/file/d/1xK6p4qtbu8Hdd-Bxu6jwp6BLYFRa-Lsj/view?usp=sharing) via google drive.
 
-Previous state-of-the-art methods code and sample smoothing results can be downloaded at here in [[Google Drive](https://drive.google.com/file/d/1j2IP3Q3CUel21H_JaO9SCfppHyJ4Nmet/view?usp=sharing)]
+Previous state-of-the-art methods code and sample smoothing results can be downloaded [here](https://drive.google.com/file/d/1j2IP3Q3CUel21H_JaO9SCfppHyJ4Nmet/view?usp=sharing) via google drive.
 
 Please download these two zip files and unzip them to the work directory. The complete file structure should be like this.
 ```bash
@@ -28,6 +28,7 @@ Please download these two zip files and unzip them to the work directory. The co
 ├── Resnet_tl
 ├── VDCNN_tf
 ├── README.md
+├── README
 ```
 
 ## 2 Dataset Usage
@@ -52,6 +53,13 @@ groundtruth images sample:
 </p>
 
 ### Evaluate Performance
+<p align='center'>
+<img src="README/wmae.png" width="500"> 
+</p>
+
+<p align='center'>
+<img src="README/wrmse.png" width="500"> 
+</p>
 
 We proposed two quantitative measures: Weighted Mean Absolute Error (**WMAE**) and Weighted Root Mean Squared Error (**WRMSE**). Run ```dataset/compute_WAME_WRMSE.py``` to evaluate your own algorithm performance.
 
