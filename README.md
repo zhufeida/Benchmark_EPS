@@ -108,7 +108,16 @@ You can set your own training hyperparameters by providing addtional arguments, 
 ### Citation
 If you find this benchmark helpful for your research, please consider citing:
 ```
-To be added
+@article{zhu2019benchmark,
+  title={A Benchmark for Edge-Preserving Image Smoothing},
+  author={Zhu, Feida and Liang, Zhetong and Jia, Xixi and Zhang, Lei and Yu, Yizhou},
+  journal={IEEE Transactions on Image Processing},
+  volume={28},
+  number={7},
+  pages={3556--3570},
+  year={2019},
+  publisher={IEEE}
+}
 ```
 
 ## 4 Previous Methods
